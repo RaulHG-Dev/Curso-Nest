@@ -1,6 +1,6 @@
 const Deprecated = (deprecationReason: string) => {
     return (target: any, memberName: string, propertyDescriptor: PropertyDescriptor) => {
-      console.log({target})
+    //   console.log({target})
       return {
         get() {
           const wrapperFn = (...args: any[]) => {
@@ -27,7 +27,7 @@ export class Pokemon {
 
     @Deprecated('Most use speak2 method instead')
     speak() {
-        console.log(`${ this.name }, ${ this.name }`);
+        console.log(`${ this.name }, ${ this.name }!`)
     }
 }
 
