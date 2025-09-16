@@ -16,6 +16,11 @@ RUN npm install
 # Copia el resto del código fuente de la aplicación al contenedor.
 COPY . .
 
+# Dar permiso para ejecutar aplicación
+RUN adduser --disabled-password nestuser
+RUN chown -R nestuser:nestuser /var/www/nest-app
+USER nestuser
+
 # Expone el puerto en el que se ejecutará la aplicación.
 # Por defecto, las aplicaciones NestJS usan el puerto 3000.
 EXPOSE 3000
