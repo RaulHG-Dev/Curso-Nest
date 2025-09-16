@@ -65,5 +65,5 @@ $ docker build -t <nombre-de-tu-imagen> .
 
 Run container
 ```bash
-$ docker run -p 3000:3000 --name <nombre-de-tu-contenedor> <nombre-de-tu-imagen>
+$ docker run -d -p 3000:3000 --name <nombre-de-tu-contenedor> <nombre-de-tu-imagen>
 ```
