@@ -16,10 +16,6 @@ export class CreateProductDto {
 
     @IsString()
     @IsOptional()
-    images?: string[];
-
-    @IsString()
-    @IsOptional()
     slug?: string;
 
     @IsInt()
@@ -38,4 +34,9 @@ export class CreateProductDto {
     @IsArray()
     @IsOptional()
     tags: string[]
+
+    @IsString({ each: true })
+    @IsArray()
+    @IsOptional()
+    images?: string[];
 }
